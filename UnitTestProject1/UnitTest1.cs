@@ -14,7 +14,9 @@ namespace UnitTestProject1
         [TestMethod]
         public void TestMethod1()
         {
+            //navigating to google.com
             driver.Navigate().GoToUrl("https://google.com");
+            //quitting the browser
             driver.Quit();
         }
     }
