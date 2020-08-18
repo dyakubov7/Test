@@ -25,7 +25,22 @@ namespace UnitTestProject1
             driver.Quit();
             //quitting the browser
             //adding more comments
+            
 
+        }
+
+        [TestMethod]
+
+        public void test2()
+        {
+            driver.Navigate().GoToUrl("https://uwm.com");
+            driver.Manage().Window.Maximize();
+            IWebElement manageYourPipeline = driver.FindElement(By.XPath("//a[.='Manage Your Pipeline']"));
+            manageYourPipeline.Click();
+            IWebElement blink = driver.FindElement(By.XPath("//a[@href='https://www.uwm.com/manage-your-pipeline/blink']"));
+            blink.Click();
+            Thread.Sleep(2000);
+            driver.Quit();
 
         }
     }
