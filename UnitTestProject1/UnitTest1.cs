@@ -2,6 +2,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Firefox;
+using System.Threading;
 
 namespace UnitTestProject1
 {
@@ -17,7 +18,13 @@ namespace UnitTestProject1
             //navigating to google.com
             driver.Navigate().GoToUrl("https://google.com");
             //quitting the browser
+            IWebElement element = driver.FindElement(By.Name("q"));
+            element.SendKeys("United shore");
+            element.SendKeys(Keys.Enter);
+            Thread.Sleep(2000);
             driver.Quit();
+
+
         }
     }
 }
